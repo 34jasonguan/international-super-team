@@ -1,0 +1,29 @@
+/* Navbar container styles */
+.App-header {
+    position: fixed; /* Set the Navbar to have a fixed position */
+    top: 0; /* Position it at the top of the page */
+    right: 0; /* Position it at the right side of the page */
+    background-color: #60CE80; /* Change the background color as desired */
+  }
+  
+  /* Navbar brand (logo) styles */
+  .Navbar.Brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff; /* Text color */
+  }
+  
+  /* Navbar links styles */
+  .Nav.Link {
+    color: #fff; /* Text color for links */
+    margin-right: 20px; /* Adjust the spacing between links */
+    font-size: 18px; /* Adjust the font size */
+    text-decoration: none; /* Remove underlines from links */
+  }
+  
+  /* Navbar links hover styles */
+  .Nav.Link:hover {
+    text-decoration: underline; /* Add underline on hover */
+  }
+  
+  

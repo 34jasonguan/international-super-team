@@ -1,39 +1,51 @@
-import React, { useState, useEffect} from 'react';
-import logo from './logo.svg';
+import React from 'react';
+import Logo2 from './Logo2.svg';
 import './App.css';
 import Home from './pages/Home';
 import About from './pages/About';
-import Navbar from './Components/Navbar';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Import React Router components with Routes
+import './Navbar.css'; // Import the CSS file
+
+
 
 function App() {
   return (
+    <body>
     <div className="App">
-      <header className="App-header">
-      <Home /> {/* Render the Home component */}
       <Router>
-      <div>
-        <Navbar />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/about" component={About} />
-        </Switch>
-      </div>
-    </Router>
-        <img src={logo} className="App-logo" alt="logo"></img>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <header className="App-header">
+          <img src={Logo2} className="App-logo" alt="logo" />
+            <Navbar expand="lg" className="bg-body-tertiary">
+            <Container>
+              <Navbar.Brand href="#home">Our App</Navbar.Brand>
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="me-auto justify-content-center">
+                  <div className='container'>
+                    <div className='nav_1'>
+                    <Nav.Link as={Link} to="/">Home</Nav.Link>
+                    </div>
+                    <div className='nav_1'>
+                    <Nav.Link as={Link} to="/about">About</Nav.Link>
+                    </div>
+                  </div>
+                </Nav>
+              </Navbar.Collapse>
+            </Container>
+          </Navbar>
+
+          <Routes> {/* Use Routes to define your routes */}
+            <Route path="/" element={<Home />} /> {/* Use element prop to render components */}
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </header>
+      </Router>
     </div>
+    </body>
   );
 }
 
