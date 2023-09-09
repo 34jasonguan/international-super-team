@@ -19,9 +19,24 @@ class UsersController < ApplicationController
         render json: {points: @user.points}
     end
 
+    # GET /users/:id/getAll_People_byDorm
+    def getAll_People_byDorm
+        render json: {name: User.where(dorm: "Few").order(points: :desc).limit(15)}
+    end
+
+    # GET /users/:id/getTop_All
+    def getTop_All
+        render json: {name: User.order(points: :desc).limit(30)}
+    end
+
     # new users
     def new
         @user = User.new
+    end
+
+    def show
+        @user = User.find(params[:dorm])
+        render json: @user, status: :ok
     end
 
     def index
