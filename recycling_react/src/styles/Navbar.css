@@ -1,6 +1,6 @@
 .navbar {
     width: 100%;
-    height: 100px;
+    height: 90px;
     background-color: #60CE80;
     display: flex;
     flex-direction: row;
@@ -11,7 +11,7 @@
     height: 100%;
     display: flex;
     align-items: center;
-    padding-left: 150px;
+    padding-left: 80px;
 }
 
 .navbar .leftSide img {
@@ -23,7 +23,8 @@
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
+    padding-right: 80px;
 }
 
 .navbar a {
@@ -40,7 +41,7 @@
 }
 
 .navbar .rightSide svg {
-    font-size: 40px;
+    font-size: 60;
 }
 
 .navbar #open {
@@ -82,7 +83,7 @@
 }
 
 .navbar .rightSide {
-    justify-content: flex-end;
+    justify-content: right;
     padding-right: 50px;
 }
 

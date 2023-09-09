@@ -1,11 +1,17 @@
 import React from 'react'
+import {Link} from 'react-router-dom'; 
+import Banner from '../images/da-lemon.png'; 
+import '../styles/Home.css'; 
 
 function Home() {
   return (
-    <div className="home"> 
+    <div className="home" style={{ backgroundImage: `url(${Banner})` }}> 
         <div className="headerContainer">
-            <n1> Humza likes balls </n1>
-            <p> HE REALLY DOES </p>
+            <h1> Welcome Back, Raul! </h1>
+            <p> Ready to recycle? </p>
+            <Link to="/updatescore">
+                <button> LOG MY RECYCLING </button>
+            </Link>
         </div>
     </div>
   )

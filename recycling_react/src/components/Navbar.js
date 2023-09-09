@@ -7,7 +7,9 @@ function Navbar() {
   return (
     <div className="navbar">
         <div className="leftSide">
+            <Link to="/">
             <img src={t2tLogo} />
+            </Link>
         </div>
         <div className="rightSide">
             <Link to="/scoring"> Scoring </Link>
