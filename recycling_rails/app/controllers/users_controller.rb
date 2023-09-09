@@ -21,7 +21,8 @@ class UsersController < ApplicationController
 
     # GET /users/:id/getAll_People_byDorm
     def getAll_People_byDorm
-        render json: {name: User.where(dorm: "Few").order(points: :desc).limit(15)}
+        @user = User.find(params[:id])
+        render json: {name: User.where(dorm: @user.dorm).order(points: :desc).limit(15)}
     end
 
     # GET /users/:id/getTop_All
