@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   put '/users/:id/updatePoints', to: 'users#updatePoints'
   get '/users/:id/getAll_People_byDorm', to: 'users#getAll_People_byDorm'
   get '/users/:id/getTop_All', to: 'users#getTop_All'
+  get '/users/:id/getDormRank', to: 'users#getDormRank'
 
 end

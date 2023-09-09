@@ -30,6 +30,21 @@ class UsersController < ApplicationController
         render json: {name: User.order(points: :desc).limit(30)}
     end
 
+    # GET/users/:id/getDormRank
+    def getDormRank
+        dorms = ["Craven", "Crowell", "Edens", "Few", "Hollows", "Keohanne", "Kilgo", "Wannamaker"]
+        @arr = Array.new()
+        for i in 0..7
+            @total = User.where(dorm: dorms[i]).sum(:points)
+            @temp = {
+                dorm: dorms[i],
+                points: @total
+            }
+            @arr.push(@temp)
+        end
+        render json: {results: @arr}
+    end
+
     # new users
     def new
         @user = User.new
