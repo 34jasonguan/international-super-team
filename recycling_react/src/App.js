@@ -3,6 +3,11 @@ import './App.css';
 import Navbar from './components/Navbar'; 
 import Footer from './components/Footer'; 
 import Home from './pages/Home'; 
+import Leaderboard from './pages/Leaderboard'; 
+import Login from './pages/Login'; 
+import Rewards from './pages/Rewards'; 
+import About from './pages/About'; 
+import UpdateScore from './pages/UpdateScore'; 
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'; 
 
 function App() {
@@ -14,6 +19,11 @@ function App() {
       </div>
       <Routes>
         <Route exact path='/' element={<Home />} />
+        <Route exact path='/leaderboard' element={<Leaderboard />} />
+        <Route exact path='/login' element={<Login />} />
+        <Route exact path='/rewards' element={<Rewards />} />
+        <Route exact path='/about' element={<About />} />
+        <Route exact path='/updatescore' element={<UpdateScore />} />
       </Routes>
       <Footer />
       </Router>
