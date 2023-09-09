@@ -6,7 +6,8 @@ WORKDIR /usr/src/cache
 COPY package.json .
 COPY package-lock.json .
 # installing everything will now create a node_modules directory inside /usr/src/cache
-RUN npm install 
+RUN npm install
+RUN npm install react-router-dom 
 
 WORKDIR /app
 # prepare any folders that might be needed by node_modules once we move this over at runtime

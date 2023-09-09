@@ -4,23 +4,25 @@ import './App.css';
 import Home from './pages/Home';
 import About from './pages/About';
 import Navbar from './Components/Navbar';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Leaderboard from './pages/Leaderboard';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <Home /> {/* Render the Home component */}
-      <Router>
+        <Leaderboard currentUser={1}></Leaderboard>
+      {/* <Home /> Render the Home component */}
+      {/* <Router>
       <div>
         <Navbar />
-        <Switch>
+        <Routes>
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
-        </Switch>
+        </Routes>
       </div>
-    </Router>
-        <img src={logo} className="App-logo" alt="logo"></img>
+      </Router> */}
+        {/* <img src={logo} className="App-logo" alt="logo"></img>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -31,7 +33,7 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a> */}
       </header>
     </div>
   );
