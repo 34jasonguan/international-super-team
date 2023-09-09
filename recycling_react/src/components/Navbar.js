@@ -10,7 +10,7 @@ function Navbar() {
             <img src={t2tLogo} />
         </div>
         <div className="rightSide">
-            <Link to="/scoring"> Scoring </Link>
+            <Link to="/Form"> Form </Link>
             <Link to="/leaderboard"> Leaderboard </Link>
             <Link to="/rewards"> Rewards </Link>
             <Link to="/login"> Login </Link>
