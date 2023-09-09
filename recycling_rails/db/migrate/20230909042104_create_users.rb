@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :netid
       t.integer :points
       t.integer :reports
-      t.references :dorm, foreign_key: true
+      t.string :dorm
 
       t.timestamps
     end

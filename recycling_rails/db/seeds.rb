@@ -8,7 +8,7 @@
 
 puts 'seeding'
 
-dorm1 = Dorm.create(name: "Kilgo")
-user1 = User.create(name: "Jason", netid: "jg123", points: 1, reports: 1)
+user1 = User.create(name: "Jason", netid: "jg123", points: 1, reports: 1, dorm: "Few")
+user2 = User.create(name: "Humza", netid: "hz123", points: 5, reports: 1, dorm: "Few")
 
 puts 'seeded'
