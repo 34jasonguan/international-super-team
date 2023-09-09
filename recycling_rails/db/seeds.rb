@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+puts 'seeding'
+
+dorm1 = Dorm.create(name: "Kilgo")
+user1 = User.create(name: "Jason", netid: "jg123", points: 1, reports: 1)
+
+puts 'seeded'
