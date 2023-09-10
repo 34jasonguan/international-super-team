@@ -1,24 +1,7 @@
 import React from 'react'
 import Profiles from "./Profiles";
-//import { LeaderboardData } from '../pages/Leaderboard';
-import { getLeaderboardData } from '../pages/Leaderboard';
-
-// function useless(){
-//     return 0;
-// }
 
 export default function Board({LeaderboardData}){
-
-    // const handleClick = () =>{
-
-    // }
-
-    // if (LeaderboardData == undefined){
-    //     // setTimeout(useless,
-    //     //     2000
-    //     // )
-
-    // }
 
     console.log(LeaderboardData)
 
