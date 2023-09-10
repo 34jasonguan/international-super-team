@@ -14,31 +14,34 @@ export default function UpdateScore({ currentUser }) {
   const [boxes, setboxes] = useState('');
   const [bottles, setlbottles] = useState('');
   const [cans, setcans] = useState('');
-  const [points, setPoints] = useState(0);
+  const [points, setPoints] = useState('');
   const { register, formState: { errors } } = useForm();
 
-  const onSubmit = async (data) => {
-    if (validateFormData(data)) {
-      try {
-        const response = await fetch(`/users/${currentUser}/update_points`, {
+  const onSubmit = async (e) => {
+        e.preventDefault();
+        var p = {"points": points}
+        const response = await fetch(`http://localhost:8080/users/${currentUser}/updatePoints`, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            points: {points}
-          }),
+          headers: {"Content-Type": "application/json"},
+          body: p
+        })
+        .then((response) => {
+          if (!response.ok) {
+            console.error('Error:', response);
+            throw new Error('Failed to upload the SBOM.');
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log('Response Data:', data);
+          // Handle the response data as needed
+        })
+        .catch((error) => {
+          // Handle errors
+          console.error('Error:', error);
         });
-        if (response.ok) {
-          // Handle success, e.g., navigate to the submitted page
-        } else {
-          // Handle error, e.g., show an error message
-          console.error('Failed to update user');
-        }
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    }
+        
+    
   };
   
 
@@ -50,11 +53,6 @@ export default function UpdateScore({ currentUser }) {
     console.log(points);
   }
 
-  // Function to validate the form data
-  const validateFormData = data => {
-    return true; 
-  };
-  
   return (
     <section>
       <div className="register">
