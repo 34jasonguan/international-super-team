@@ -9,14 +9,16 @@ export default function Board({LeaderboardData}){
 
     return(
         <div className="board">
-            <h1 className="leaderboard">Leaderboard</h1>
+            <h1 className="leaderboard">Leaderboards</h1>
             <div className="duration">
             <Link to="/leaderboard">
-                <button> Top Users </button>
+                <button className="myButton"> Top Users </button>
             </Link>
             <Link to="/dormleaderboard">
-                <button> Dorm Leaderboard </button>
+                <button className="myButton"> Dorm Leaderboard </button>
             </Link>
+            <div className="newLine"></div>
+            <h2>Top Users:</h2>
             </div>
 
             <Profiles Leaderboard={LeaderboardData}></Profiles>
