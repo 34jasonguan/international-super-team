@@ -31,6 +31,7 @@ function App() {
         <Route exact path='/about' element={<About />} />
         <Route exact path='/updatescore' element={<UpdateScore currentUser={curr}/>} />
         <Route exact path='/submitted' element={<Submitted />} />
+        <Route exact path='/dormleaderboard' element={<DormLeaderboard />} />
       </Routes>
       <div className="line"></div>
       <Footer />

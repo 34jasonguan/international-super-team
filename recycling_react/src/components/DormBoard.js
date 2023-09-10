@@ -1,5 +1,7 @@
 import React from 'react'
 import Dorm from "./Dorm";
+import {Link} from 'react-router-dom';
+import '../styles/DormBoard.css'
 
 export default function DormBoard({LeaderboardData}){
 
@@ -9,8 +11,12 @@ export default function DormBoard({LeaderboardData}){
         <div className="board">
             <h1 className="leaderboard">Leaderboard</h1>
             <div className="duration">
-                <button data-id="1">Button1</button>
-                <button data-id="2">Button2</button>
+            <Link to="/leaderboard">
+                <button> Top Users </button>
+            </Link>
+            <Link to="/dormleaderboard">
+                <button> Dorm Leaderboard </button>
+            </Link>
             </div>
 
             <Dorm Leaderboard={LeaderboardData}></Dorm>
