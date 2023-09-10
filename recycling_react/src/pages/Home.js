@@ -28,7 +28,7 @@ function Home({ currentUser }) {
       fetch(infoUrl)
           .then((respose) => respose.json())
           .then((data) => {
-              console.log("data", data.name)
+              // console.log("data", data.name)
               setShowName(data.name)
           })
   }, [])
