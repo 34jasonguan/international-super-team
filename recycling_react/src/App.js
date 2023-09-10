@@ -18,7 +18,7 @@ export let currentUser = 1;
 function App() {
   return (
     <div className="App">
-      {/* <Router>
+      <Router>
       <Navbar />
       <div className="line">
       </div>
@@ -33,8 +33,7 @@ function App() {
       </Routes>
       <div className="line"></div>
       <Footer />
-      </Router> */}
-      <Leaderboard currentUser={currentUser}></Leaderboard>
+      </Router>
     </div>
   );
 }
