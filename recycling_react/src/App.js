@@ -26,7 +26,7 @@ function App() {
         <Route exact path='/login' element={<Login />} />
         <Route exact path='/rewards' element={<Rewards />} />
         <Route exact path='/about' element={<About />} />
-        <Route exact path='/updatescore' element={<UpdateScore />} />
+        <Route exact path='/updatescore' element={<UpdateScore userId={curr}/>} />
         <Route exact path='/submitted' element={<Submitted />} />
       </Routes>
       <div className="line"></div>
