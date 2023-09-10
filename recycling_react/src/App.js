@@ -27,6 +27,7 @@ function App() {
         <Route exact path='/about' element={<About />} />
         <Route exact path='/updatescore' element={<UpdateScore />} />
       </Routes>
+      <div className="line"></div>
       <Footer />
       </Router>
     </div>

@@ -17,8 +17,6 @@ function Navbar() {
             <Link to="/rewards"> Rewards </Link>
             <Link to="/login"> Login </Link>
         </div>
-
-
     </div>
   );
 }
