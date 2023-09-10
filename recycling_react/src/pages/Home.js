@@ -4,21 +4,6 @@ import {Link} from 'react-router-dom';
 import Banner from '../images/da-lemon.png'; 
 import '../styles/Home.css'; 
 
-function Name({ currentUser }){
-  const [showBoard, setShowBoard] = useState(null);
-  const infoUrl = `http://localhost:8080/users/${currentUser}/getName`;
-
-  // Looks for the data in the backend
-  useEffect(() => {
-      fetch(infoUrl)
-          .then((respose) => respose.json())
-          .then((data) => {
-              console.log("data", data.name)
-              
-          })
-  }, [])
-}
-
 function Home({ currentUser }) {
   const [showName, setShowName] = useState(false);
   const infoUrl = `http://localhost:8080/users/${currentUser}/getName`;
