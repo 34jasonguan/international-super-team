@@ -12,7 +12,7 @@ import Submitted from './pages/Submitted';
 import DormLeaderboard from './pages/DormLeaderboard'
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'; 
 // Selects the user
-const curr = 971;
+const curr = 797;
 
 export let currentUser = 1;
 
