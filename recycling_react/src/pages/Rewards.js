@@ -28,16 +28,17 @@ function Rewards({ currentUser }) {
           })
   }, [])
 
+  // If the user is not in the winning dorm
   if(showDorm.dorm != showDorm.wDorm){
     return(
       <p> Sorry, the rewards page has not been implemented yet.</p>
     )
   }
+  // If he user is in the winning dorm
   else{
     return (
       <div class="rewards">
           <p>You currently have {showPoints} points</p>
-          <p> Sorry, the rewards page has not been implemented yet. </p>
       </div>
     )
   }
