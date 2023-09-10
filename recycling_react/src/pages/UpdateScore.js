@@ -1,11 +1,8 @@
 import { useState } from "react";
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from 'react-bootstrap/Dropdown';
 import '../styles/Form.css';
-import { Link } from 'react-router-dom';
-import Submitted from './Submitted';
+
 
 export default function UpdateScore({ currentUser }) {
   const [fname, setfname] = useState('');
@@ -20,38 +17,42 @@ export default function UpdateScore({ currentUser }) {
   const onSubmit = async (e) => {
         e.preventDefault();
         var p = {"points": points}
-        const response = await fetch(`http://localhost:8080/users/${currentUser}/updatePoints`, {
+        const response = await fetch(`http://localhost:8080/users/1/updatePoints`, {
           method: 'POST',
-          headers: {"Content-Type": "application/json"},
-          body: p
-        })
-        .then((response) => {
-          if (!response.ok) {
-            console.error('Error:', response);
-            throw new Error('Failed to upload the SBOM.');
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(p)
+        }).then(() => {
+            console.log('new blog added');
+          })
+        }
+          // const response = await fetch(`http://localhost:8080/users/${currentUser}/updatePoints`, {
+          //   method: 'POST',
+          //   headers: {"Content-Type": "application/json"},
+          //   body: p
+          // })
+          // .then((response) => {
+          //   if (!response.ok) {
+          //     console.error('Error:', response);
+          //     throw new Error('Failed to upload the SBOM.');
+          //   }
+          //   return response.json();
+          // })
+          // .then((data) => {
+          //   console.log('Response Data:', data);
+          //   // Handle the response data as needed
+          // })
+          // .catch((error) => {
+          //   // Handle errors
+          //   console.error('Error:', error);
+          // });
+          const handleSubmit2 = (e) => {
+            e.preventDefault();
+            const person = { fname, lname, dorm, boxes, bottles, cans};
+            const calculatedPoints = (2*cans) + (2*bottles) * boxes; // Modify this calculation as needed
+            setPoints(calculatedPoints);
+            console.log(points);
           }
-          return response.json();
-        })
-        .then((data) => {
-          console.log('Response Data:', data);
-          // Handle the response data as needed
-        })
-        .catch((error) => {
-          // Handle errors
-          console.error('Error:', error);
-        });
-        
     
-  };
-  
-
-  const handleSubmit2 = (e) => {
-    e.preventDefault();
-    const person = { fname, lname, dorm, boxes, bottles, cans};
-    const calculatedPoints = (2*cans) + (2*bottles) * boxes; // Modify this calculation as needed
-    setPoints(calculatedPoints);
-    console.log(points);
-  }
 
   return (
     <section>
@@ -89,3 +90,4 @@ export default function UpdateScore({ currentUser }) {
     </section>
   );
 }
+
