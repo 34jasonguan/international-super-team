@@ -10,16 +10,38 @@ function Rewards({ currentUser }) {
       fetch(infoUrl)
           .then((respose) => respose.json())
           .then((data) => {
-              // console.log("data", data.name)
-              setShowPoints(data.name)
+              // console.log("data", data.points)
+              setShowPoints(data.points)
           })
   }, [])
 
-  return (
-    <div class="rewards">
-        <p> Sorry, the rewards page has not been implemented yet. </p>
-    </div>
-  )
+  const [showDorm, setShowDorm] = useState(false);
+  const info = `http://localhost:8080/users/${currentUser}/getDorm`;
+
+  // Looks for the data in the backend
+  useEffect(() => {
+      fetch(info)
+          .then((respose) => respose.json())
+          .then((data) => {
+              console.log("data", data)
+              setShowDorm(data);
+          })
+  }, [])
+
+  if(showDorm.dorm != showDorm.wDorm){
+    return(
+      <p> Sorry, the rewards page has not been implemented yet.</p>
+    )
+  }
+  else{
+    return (
+      <div class="rewards">
+          <p>You currently have {showPoints} points</p>
+          <p> Sorry, the rewards page has not been implemented yet. </p>
+      </div>
+    )
+  }
+  
 }
 
 export default Rewards
