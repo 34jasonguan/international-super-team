@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     # GET /users/:id/getDorm
     def getDorm
         @user = User.find(params[:id])
-        dorms = ["Craven", "Crowell", "Edens", "Few", "Hollows", "Keohanne", "Kilgo", "Wannamaker"]
+        dorms = ["Craven", "Crowell", "Edens", "Few", "Hollows", "Keohane", "Kilgo", "Wannamaker"]
         @arr = Array.new()
         r = ""
         max = 0

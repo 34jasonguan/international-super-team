@@ -2,18 +2,18 @@
 
 /* Style for the container */
 .ContainerFluidExample {
-    background-color: #f0f0f0;
-    padding: 20px;
-  }
-  
-  /* Style for rows */
-  .Row {
-    margin: 10px 0;
-  }
-  
-  /* Style for columns */
-  .Col {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
-  }
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+/* Style for rows */
+.Row {
+  margin: 10px 0;
+}
+
+/* Style for columns */
+.Col {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
