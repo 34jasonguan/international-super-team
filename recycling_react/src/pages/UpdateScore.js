@@ -19,7 +19,7 @@ export default function UpdateScore({ currentUser }) {
     // Modify this calculation as needed
     // console.log((2*parseInt(cans)) + (2*parseInt(bottles)) + parseInt(boxes))
     setPoints((2*parseInt(cans)) + (2*parseInt(bottles)) + parseInt(boxes));
-    var p = {"new_points": parseInt(points)}
+    var p = {"new_points": (2*parseInt(cans)) + (2*parseInt(bottles)) + parseInt(boxes)}
     console.log(p);
     const response = await fetch(`http://localhost:8080/users/${currentUser}/sumPoints`, {
       method: 'POST',
