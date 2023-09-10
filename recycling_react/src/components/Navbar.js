@@ -2,6 +2,8 @@ import React from 'react';
 import t2tLogo from '../images/t2t-transparent.svg'; 
 import {Link} from 'react-router-dom'; 
 import '../styles/Navbar.css'; 
+import '../styles/Form.css';
+import Form from '../pages/Form';
 
 function Navbar() {
   return (
