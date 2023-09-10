@@ -19,10 +19,21 @@ class UsersController < ApplicationController
         render json: {points: @user.points}
     end
 
-    # GET /users/:id/getAll_People_byDorm
-    def getAll_People_byDorm
+    # GET /users/:id/getDorm
+    def getDorm
         @user = User.find(params[:id])
-        render json: {name: User.where(dorm: @user.dorm).order(points: :desc).limit(15)}
+        dorms = ["Craven", "Crowell", "Edens", "Few", "Hollows", "Keohanne", "Kilgo", "Wannamaker"]
+        @arr = Array.new()
+        r = ""
+        max = 0
+        for i in 0..7
+            total = User.where(dorm: dorms[i]).sum(:points)
+            if total > max
+                r = dorms[i] 
+                max = total
+            end
+        end
+        render json: {dorm: @user.dorm, wDorm: r}
     end
 
     # GET /users/:id/getTop_All
@@ -44,7 +55,7 @@ class UsersController < ApplicationController
         end
         
         # Returns JSON file with the result of the dorms
-        render json: {results: @arr}
+        render json: {results: @arr.sort {|a, b| b[:points] <=> a[:points]}}
     end
 
     # new users

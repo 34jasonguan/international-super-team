@@ -27,7 +27,7 @@ function App() {
         <Route exact path='/' element={<Home currentUser={curr}/>} />
         <Route exact path='/leaderboard' element={<Leaderboard />} />
         <Route exact path='/login' element={<Login />} />
-        <Route exact path='/rewards' element={<Rewards />} />
+        <Route exact path='/rewards' element={<Rewards currentUser={curr}/>} />
         <Route exact path='/about' element={<About />} />
         <Route exact path='/updatescore' element={<UpdateScore />} />
         <Route exact path='/submitted' element={<Submitted />} />
