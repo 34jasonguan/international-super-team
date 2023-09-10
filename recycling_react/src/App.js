@@ -9,6 +9,8 @@ import Rewards from './pages/Rewards';
 import About from './pages/About'; 
 import UpdateScore from './pages/UpdateScore'; 
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'; 
+// Selects the user
+var curr = 1;
 
 function App() {
   return (
@@ -18,7 +20,7 @@ function App() {
       <div className="line">
       </div>
       <Routes>
-        <Route exact path='/' element={<Home />} />
+        <Route exact path='/' element={<Home currentUser={curr}/>} />
         <Route exact path='/leaderboard' element={<Leaderboard />} />
         <Route exact path='/login' element={<Login />} />
         <Route exact path='/rewards' element={<Rewards />} />
