@@ -2,9 +2,11 @@ import { useState } from "react";
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import '../styles/Form.css';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function UpdateScore({ currentUser }) {
+  const navigate = useNavigate();
   const [fname, setfname] = useState('');
   const [lname, setlname] = useState('');
   const [dorm, setdorm] = useState('');
@@ -26,7 +28,7 @@ export default function UpdateScore({ currentUser }) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(p)
     }).then(() => {
-        // console.log('new blog added');
+      navigate('/submitted')
       })
   }
           
