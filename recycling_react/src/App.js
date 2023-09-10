@@ -10,7 +10,7 @@ import About from './pages/About';
 import UpdateScore from './pages/UpdateScore'; 
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'; 
 // Selects the user
-var curr = 1;
+const curr = 69;
 
 function App() {
   return (
