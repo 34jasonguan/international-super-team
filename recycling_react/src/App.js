@@ -11,7 +11,7 @@ import UpdateScore from './pages/UpdateScore';
 import Submitted from './pages/Submitted';  
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'; 
 // Selects the user
-const curr = 1;
+const curr = 971;
 
 function App() {
   return (
