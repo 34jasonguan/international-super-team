@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import Grid from '../components/Grid.js'
 
 function Rewards({ currentUser }) {
 
@@ -39,6 +40,7 @@ function Rewards({ currentUser }) {
     return (
       <div class="rewards">
           <p>You currently have {showPoints} points</p>
+          <Grid></Grid>
       </div>
     )
   }

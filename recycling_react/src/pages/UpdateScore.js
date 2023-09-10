@@ -9,9 +9,9 @@ export default function UpdateScore({ currentUser }) {
   const [lname, setlname] = useState('');
   const [dorm, setdorm] = useState('');
   const [boxes, setboxes] = useState('');
-  const [bottles, setlbottles] = useState(0);
-  const [cans, setcans] = useState(0);
-  const [points, setPoints] = useState(0);
+  const [bottles, setlbottles] = useState();
+  const [cans, setcans] = useState();
+  const [points, setPoints] = useState();
   const { register, formState: { errors } } = useForm();
 
   const onSubmit = async (e) => {

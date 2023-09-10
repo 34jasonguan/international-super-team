@@ -45,7 +45,7 @@ last_names = [
 names = Array.new(1000) { "#{first_names.sample} #{last_names.sample}" }
 
 # Dorms array
-dorms = ["Craven", "Crowell", "Edens", "Few", "Hollows", "Keohanne", "Kilgo", "Wannamaker"]
+dorms = ["Craven", "Crowell", "Edens", "Few", "Hollows", "Keohane", "Kilgo", "Wannamaker"]
 
 # Creates netids
 letters = ('A'..'Z').to_a
