@@ -6,6 +6,8 @@ import Home from './pages/Home';
 import Leaderboard from './pages/Leaderboard';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'; 
 
+export let currentUser = 1;
+
 function App() {
   return (
     <div className="App">
@@ -18,7 +20,7 @@ function App() {
       </Routes>
       <Footer />
       </Router> */}
-      <Leaderboard currentUser={1}></Leaderboard>
+      <Leaderboard currentUser={currentUser}></Leaderboard>
     </div>
   );
 }

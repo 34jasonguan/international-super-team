@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Profiles(Leaderboard){
+export default function Profiles({Leaderboard}){
     return(
         <div id="profile">
-            {Item(Leaderboard.name)}
+            {Item(Leaderboard)}
         </div>
     )
 }
@@ -13,7 +13,7 @@ function Item(data){
         <>
             {
                 data.map((value, index) => (
-                    <div className="flex">
+                    <div className="flex" key={index}>
                         <div className="item">
                             <div className="info">
                                 <h3 className="name text-dark">{value.name}</h3>
