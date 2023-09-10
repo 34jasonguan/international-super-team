@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import {Link} from 'react-router-dom'; 
 import Banner from '../images/final-t2t-home-background.png'; 
 import '../styles/Home.css'; 
+let n;
 
 function Home({ currentUser }) {
   const [showName, setShowName] = useState(false);
@@ -13,7 +14,9 @@ function Home({ currentUser }) {
       fetch(infoUrl)
           .then((respose) => respose.json())
           .then((data) => {
-              // console.log("data", data.name)
+              n = data.name;
+              n = n.substring(0, n.indexOf(' '))
+              console.log("data", n.substring(0, n.indexOf(' ')))
               setShowName(data.name)
           })
   }, [])
@@ -21,7 +24,7 @@ function Home({ currentUser }) {
   return (
     <div className="home" style={{ backgroundImage: `url(${Banner})` }}> 
         <div className="headerContainer">
-            <h1> Welcome Back, {showName} </h1>
+            <h1> Welcome Back, {n} </h1>
             <p> Ready to recycle? </p>
             <Link to="/updatescore">
                 <button> Log My Recycling </button>
