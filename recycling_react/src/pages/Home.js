@@ -24,7 +24,7 @@ function Home({ currentUser }) {
   return (
     <div className="home" style={{ backgroundImage: `url(${Banner})` }}> 
         <div className="headerContainer">
-            <h1> Welcome Back, {n} </h1>
+            <h1> Welcome Back, {n}!</h1>
             <p> Ready to recycle? </p>
             <Link to="/updatescore">
                 <button> Log My Recycling </button>

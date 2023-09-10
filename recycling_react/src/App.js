@@ -7,10 +7,11 @@ import Leaderboard from './pages/Leaderboard';
 import Login from './pages/Login'; 
 import Rewards from './pages/Rewards'; 
 import About from './pages/About'; 
-import UpdateScore from './pages/UpdateScore'; 
+import UpdateScore from './pages/UpdateScore';
+import Submitted from './pages/Submitted';  
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'; 
 // Selects the user
-const curr = 971;
+const curr = 1;
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route exact path='/rewards' element={<Rewards />} />
         <Route exact path='/about' element={<About />} />
         <Route exact path='/updatescore' element={<UpdateScore />} />
+        <Route exact path='/submitted' element={<Submitted />} />
       </Routes>
       <div className="line"></div>
       <Footer />
