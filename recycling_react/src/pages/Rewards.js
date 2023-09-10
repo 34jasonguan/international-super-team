@@ -34,7 +34,7 @@ function Rewards({ currentUser }) {
       <p> Sorry, the rewards page has not been implemented yet.</p>
     )
   }
-  // If he user is in the winning dorm
+  // If the user is in the winning dorm
   else{
     return (
       <div class="rewards">
