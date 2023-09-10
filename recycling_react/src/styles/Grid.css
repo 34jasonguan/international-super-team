@@ -1,9 +1,9 @@
 /* Grid.css */
 
 /* Style for the container */
-.ContainerFluidExample {
+.container {
   background-color: #f0f0f0;
-  padding: 20px;
+  padding-left: 30px;
 }
 
 /* Style for rows */

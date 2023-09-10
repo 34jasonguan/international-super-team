@@ -1,0 +1,24 @@
+.titleText {
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+}
+
+.header{
+    text-align: center;
+    font-size: small;
+}
+
+.text{
+    font-size: large;
+    text-align: center;
+}
+
+.img{
+    padding-left: 600px;
+}
+
+.newLine{
+    border-bottom: 3px solid black;
+    padding-top: 0px;
+}
