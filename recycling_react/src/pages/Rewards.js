@@ -1,4 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 function Rewards({ currentUser }) {
 
@@ -29,17 +31,15 @@ function Rewards({ currentUser }) {
   }, [])
 
   // If the user is not in the winning dorm
-  if(showDorm.dorm != showDorm.wDorm){
+  if(showDorm.dorm == showDorm.wDorm){
     return(
-      <p> Sorry, the rewards page has not been implemented yet.</p>
+      <p> You don't have access to redeem rewards</p>
     )
   }
   // If the user is in the winning dorm
   else{
     return (
-      <div class="rewards">
-          <p>You currently have {showPoints} points</p>
-      </div>
+      
     )
   }
   

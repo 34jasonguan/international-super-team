@@ -14,8 +14,6 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 // Selects the user
 const curr = 971;
 
-export let currentUser = 1;
-
 function App() {
   return (
     <div className="App">

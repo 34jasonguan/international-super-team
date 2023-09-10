@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users
   get '/users/:id/getName', to: 'users#getName'
   get '/users/:id/getPoints', to: 'users#getPoints' 
-  put '/users/:id/updatePoints', to: 'users#updatePoints'
+  post '/users/:id/updatePoints', to: 'users#updatePoints'
   get '/users/:id/getDorm', to: 'users#getDorm'
   get '/users/:id/getTop_All', to: 'users#getTop_All'
   get '/users/:id/getDormRank', to: 'users#getDormRank'
