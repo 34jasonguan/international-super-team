@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
 
-    # PUT users/:id/updatePoints
-    def updatePoints
+    # PUT users/:id/sumPoints
+    def sumPoints
         @user = User.find(params[:id])
-        @user.update(points: params[:new_points])
+        @user.update(points: @user.points+params[:new_points])
         render json: @user, status: :ok
     end
 

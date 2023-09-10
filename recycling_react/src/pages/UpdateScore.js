@@ -9,49 +9,27 @@ export default function UpdateScore({ currentUser }) {
   const [lname, setlname] = useState('');
   const [dorm, setdorm] = useState('');
   const [boxes, setboxes] = useState('');
-  const [bottles, setlbottles] = useState('');
-  const [cans, setcans] = useState('');
-  const [points, setPoints] = useState('');
+  const [bottles, setlbottles] = useState(0);
+  const [cans, setcans] = useState(0);
+  const [points, setPoints] = useState(0);
   const { register, formState: { errors } } = useForm();
 
   const onSubmit = async (e) => {
-        e.preventDefault();
-        var p = {"points": points}
-        const response = await fetch(`http://localhost:8080/users/1/updatePoints`, {
-          method: 'POST',
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(p)
-        }).then(() => {
-            console.log('new blog added');
-          })
-        }
-          // const response = await fetch(`http://localhost:8080/users/${currentUser}/updatePoints`, {
-          //   method: 'POST',
-          //   headers: {"Content-Type": "application/json"},
-          //   body: p
-          // })
-          // .then((response) => {
-          //   if (!response.ok) {
-          //     console.error('Error:', response);
-          //     throw new Error('Failed to upload the SBOM.');
-          //   }
-          //   return response.json();
-          // })
-          // .then((data) => {
-          //   console.log('Response Data:', data);
-          //   // Handle the response data as needed
-          // })
-          // .catch((error) => {
-          //   // Handle errors
-          //   console.error('Error:', error);
-          // });
-          const handleSubmit2 = (e) => {
-            e.preventDefault();
-            const person = { fname, lname, dorm, boxes, bottles, cans};
-            const calculatedPoints = (2*cans) + (2*bottles) * boxes; // Modify this calculation as needed
-            setPoints(calculatedPoints);
-            console.log(points);
-          }
+    e.preventDefault();
+    // Modify this calculation as needed
+    // console.log((2*parseInt(cans)) + (2*parseInt(bottles)) + parseInt(boxes))
+    setPoints((2*parseInt(cans)) + (2*parseInt(bottles)) + parseInt(boxes));
+    var p = {"new_points": parseInt(points)}
+    console.log(p);
+    const response = await fetch(`http://localhost:8080/users/${currentUser}/sumPoints`, {
+      method: 'POST',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(p)
+    }).then(() => {
+        // console.log('new blog added');
+      })
+  }
+          
     
 
   return (
