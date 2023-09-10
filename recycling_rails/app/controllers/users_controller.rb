@@ -42,6 +42,7 @@ class UsersController < ApplicationController
             }
             @arr.push(@temp)
         end
+        
         # Returns JSON file with the result of the dorms
         render json: {results: @arr}
     end

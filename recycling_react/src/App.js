@@ -9,6 +9,7 @@ import Rewards from './pages/Rewards';
 import About from './pages/About'; 
 import UpdateScore from './pages/UpdateScore';
 import Submitted from './pages/Submitted';  
+import DormLeaderboard from './pages/DormLeaderboard'
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'; 
 // Selects the user
 const curr = 971;
@@ -33,6 +34,7 @@ function App() {
       </Routes>
       <div className="line"></div>
       <Footer />
+      <DormLeaderboard currentUser={curr}></DormLeaderboard>
       </Router>
     </div>
   );
