@@ -13,10 +13,12 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 // Selects the user
 const curr = 971;
 
+export let currentUser = 1;
+
 function App() {
   return (
     <div className="App">
-      <Router>
+      {/* <Router>
       <Navbar />
       <div className="line">
       </div>
@@ -31,7 +33,8 @@ function App() {
       </Routes>
       <div className="line"></div>
       <Footer />
-      </Router>
+      </Router> */}
+      <Leaderboard currentUser={currentUser}></Leaderboard>
     </div>
   );
 }
