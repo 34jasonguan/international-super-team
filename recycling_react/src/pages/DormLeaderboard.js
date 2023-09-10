@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import DormBoard from '../components/DormBoard';
 
 function DormLeaderboard({ currentUser }){
     const [showBoard, setshowBoard] = useState(0)
@@ -14,11 +15,11 @@ function DormLeaderboard({ currentUser }){
             }) 
     }, []);
 
-    // if (showBoard !== 0){
-    //     return(
-    //         //     This is the actual page
-    //             <Board LeaderboardData={showBoard}></Board>
-    //         )
-    // }
+    if (showBoard !== 0){
+        return(
+            //     This is the actual page
+                <DormBoard LeaderboardData={showBoard}></DormBoard>
+            )
+    }
 }
 export default DormLeaderboard;

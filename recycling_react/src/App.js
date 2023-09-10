@@ -34,7 +34,6 @@ function App() {
       </Routes>
       <div className="line"></div>
       <Footer />
-      <DormLeaderboard currentUser={curr}></DormLeaderboard>
       </Router>
     </div>
   );
